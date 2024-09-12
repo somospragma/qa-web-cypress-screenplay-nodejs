@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "lib": ["es6", "dom"],
+      "module": "NodeNext",
+      "moduleResolution": "nodenext",  // Cambia a nodenext o node16
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "types": ["cypress", "node"],
+      "baseUrl": "."
+    },
+    "include": ["**/*.ts"]
+  }
+

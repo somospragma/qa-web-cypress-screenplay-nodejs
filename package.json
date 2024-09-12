@@ -1,0 +1,23 @@
+{
+  "name": "proyectobasecypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open --e2e",
+    "testRun": "cypress run --e2e --browser edge cypress/e2e/features/**.feature"
+  },
+  "author": "ab",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
+    "@cucumber/gherkin": "^29.0.0",
+    "cypress": "^13.14.2",
+    "esbuild": "^0.23.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
+  }
+}

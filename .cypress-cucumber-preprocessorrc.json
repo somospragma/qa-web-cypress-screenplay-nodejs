@@ -1,0 +1,11 @@
+{
+    "stepDefinitions": [
+      "[filepath]/**/*.ts",
+      "[filepath].ts",
+      "cypress/e2e/step_definitions/*.ts",
+      "[filepath]\\***.ts",
+      "[filepath].ts",
+      "cypress\\e2e\\step_definitions\\*.ts"
+    ]
+  }
+  
