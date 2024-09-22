@@ -3,7 +3,7 @@ import demoqa_ui from "../userInterfaces/demoqa_ui";
 import demoqa_qs from "../questions/demoqa_qs";
 
 Given("Ingresar al portal web demoqa", ()=>{
-    cy.visit(Cypress.env('baseUrl'));
+    cy.visit(Cypress.env('baseUrl')).wait(1000);
 });
 
 When('Da click en la seccion de elements', ()=>{

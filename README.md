@@ -40,12 +40,14 @@ Puedes descargar el proyecto en el enlace [download](https://github.com/somospra
   - Crear el archivo javascritp. Ejemplo: prueba_step.js
 
 ## Tecnologias
-- [Cypress](https://www.cypress.io/) 
+- [TypeScript](https://docs.cypress.io/guides/tooling/typescript-support)
+- [Cypress](https://www.cypress.io/)
 - [Esbuild](https://github.com/bahmutov/cypress-esbuild-preprocessor)
 - [@bahmutov/cypress-esbuild-preprocessor](https://www.npmjs.com/package/@badeball/cypress-cucumber-preprocessor/v/5.0.0-rc2)
   - <a>@cucumber/gherkin
   - Reflect Metadata</a>
 - [Ext: Cucumber](https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official)
+- [Reporters-Mochawesome](https://docs.cypress.io/guides/tooling/reporters)
 
 ## Autor
 - Abraham D. Morales R.

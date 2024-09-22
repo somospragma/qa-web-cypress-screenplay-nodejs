@@ -15,12 +15,20 @@ async function setupNodeEvents(on, config) {
   return config;
 }
 
-module.exports = defineConfig({
+export default defineConfig({
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: true,
+    html: true,
+    json: true,
+    charts: true,
+  },
   e2e: {
     setupNodeEvents,
     specPattern: "cypress/e2e/features/**.feature",
   },
   env:{
     baseUrl: 'https://demoqa.com/'
-  },
+  }
 });
