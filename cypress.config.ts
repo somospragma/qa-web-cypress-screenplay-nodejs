@@ -4,13 +4,12 @@ import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-prepro
 import createEsbuildPlugin from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
 async function setupNodeEvents(on, config) {
+  const bundler = createBundler({
+    plugins: [createEsbuildPlugin(config)],
+  });
 
+  on('file:preprocessor', bundler);
   await addCucumberPreprocessorPlugin(on, config);
-  on("file:preprocessor",
-    createBundler({
-      plugins: [createEsbuildPlugin(config)],
-    })
-  );
 
   return config;
 }
@@ -26,7 +25,7 @@ export default defineConfig({
   },
   e2e: {
     setupNodeEvents,
-    specPattern: "cypress/e2e/features/**.feature",
+    specPattern: "cypress/e2e/features/**.feature"
   },
   env:{
     baseUrl: 'https://demoqa.com/'
