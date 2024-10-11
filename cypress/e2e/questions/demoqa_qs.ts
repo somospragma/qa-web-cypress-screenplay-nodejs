@@ -1,9 +1,10 @@
-import demoqa_ui from "../userInterfaces/demoqa_ui";
+import { elements } from "../user_Interfaces/demoqaUi";
+
 
 class Demoqa {
 
     seValidaElements() {
-        demoqa_ui.elements.LABEL_ELEMENT().invoke('text').then((text)=>{
+        elements.LABEL_ELEMENT().invoke('text').then((text)=>{
             expect(text).to.be.equals('Elements');
         });
     }

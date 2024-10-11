@@ -1,15 +1,25 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import demoqa_ui from "../userInterfaces/demoqa_ui";
-import demoqa_qs from "../questions/demoqa_qs";
+import Actor from "cypress/support/actors/actor";
+import VisitarPag from "../tasks/visitarPag";
+import ClickElement from "../tasks/clickElement";
+import { inicio } from "../user_Interfaces/demoqaUi";
 
-Given("Ingresar al portal web demoqa", ()=>{
-    cy.visit(Cypress.env('baseUrl')).wait(1000);
+const actor = new Actor('Daniel');
+
+Given("Ingresar al portal web demoqa", () => {
+    const visitarPag = new VisitarPag(Cypress.env('baseUrl'));
+    actor.perform(visitarPag);
 });
 
-When('Da click en la seccion de elements', ()=>{
-    demoqa_ui.inicio.BNT_ELEMENTS().click();
+When("Da click en la seccion de Book Store Application", () => { 
+    const clickElement = new ClickElement(inicio.CARD_BOOK_STORE);
+    actor.perform(clickElement);
 });
 
-Then('Se debera visualizar todos los elements', ()=>{
-    demoqa_qs.seValidaElements();
+Then("Verificar que se muestre la pagina de Login", () => { 
 });
+
+When("Digita el userName {string}", (userName) => { });
+When("Digita la contraseña {string}", (passw) => { });
+When("Da click en el boton de Login", () => { });
+Then("Verificar que se muestre la pagina de mi cuenta", () => { });

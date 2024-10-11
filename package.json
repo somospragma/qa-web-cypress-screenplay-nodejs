@@ -6,7 +6,9 @@
   "scripts": {
     "test": "cypress open --e2e",
     "testRun": "cypress run --e2e --browser edge cypress/e2e/features/**.feature",
-    "testRep": "cypress run --reporter mochawesome"
+    "testRep": "cypress run --reporter mochawesome",
+    "combine-reports": "mochawesome-merge cypress/reports/*.json > mochareports/report.json",
+    "generate-report": "marge mochareports/report.json --reportDir mochawesome --assetsDir mochawesome/assets --reportTitle index.html --inline"
   },
   "author": "ab",
   "license": "ISC",
