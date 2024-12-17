@@ -15,19 +15,23 @@ async function setupNodeEvents(on, config) {
 }
 
 export default defineConfig({
-  reporter: 'mochawesome',
+  //reporter: 'mochawesome',
+  reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/reports',
+    //reportDir: 'cypress/reports',
+    //reportDir: `reports/report_${fecha.getDate()}_${fecha.getMonth + 1}_${fecha.getFullYear()}`,
     overwrite: false,
     html: false,
     json: true,
     charts: true,
   },
-  e2e: {
+  e2e:
+  {
+    //baseUrl: 'https://demoqa.com/',
     setupNodeEvents,
-    specPattern: "cypress/e2e/features/**.feature"
+    specPattern: "cypress/e2e/features/**.feature",
+    chromeWebSecurity: false
   },
   env:{
-    baseUrl: 'https://demoqa.com/'
   }
 });

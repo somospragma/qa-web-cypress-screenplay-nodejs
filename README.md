@@ -48,8 +48,9 @@ Puedes descargar el proyecto en el enlace [download](https://github.com/somospra
   - Reflect Metadata</a>
 - [Ext: Cucumber](https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official)
 - [Reporters-Mochawesome](https://docs.cypress.io/guides/tooling/reporters)
+- [Faker](https://www.npmjs.com/package/@faker-js/faker)
 
 ## Autor
-- Abraham D. Morales R.
+- Ing. Abraham D. Morales R.
 
 

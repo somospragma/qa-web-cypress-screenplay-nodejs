@@ -1,4 +1,4 @@
-export const homePage = {
+export const homePageUi = {
     LOGO: () => cy.get('a > img'),
     BTN_HOME: () => cy.get('.shop-menu > .nav > :nth-child(1) > a'),
     BTN_CARD: () => cy.get('.shop-menu > .nav > :nth-child(3) > a'),

@@ -21,3 +21,4 @@ Feature: Place Order: Register while Checkout
     Then Verify success message 'Congratulations! Your order has been confirmed!'
     When Click Delete Account button
     Then Verify Account Delete! 'Account Deleted!' and click Continue button
+    

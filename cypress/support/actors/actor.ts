@@ -1,26 +1,38 @@
+import { Ability } from "cypress/e2e/abilities/Ability";
 
 export default class Actor {
-    private readonly name: string;
+  private readonly name: string;
+  private readonly abilities: Map<string, any> = new Map();
 
-    constructor(name: string) {
-        this.name = name;
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  can(ability: Ability): void {
+    const abilityName = ability.constructor.name;
+    this.abilities.set(abilityName, ability);
+  }
+
+  usesAbility<T>(abilityClass: new(...args: any[]) => T): T {
+    const abilityName = abilityClass.name;
+    const ability = this.abilities.get(abilityName);
+    if (!ability) {
+      throw new Error(`El actor no tiene la habilidad: ${abilityName}`);
     }
+    return ability;
+  }
 
-    // Aquí puedes agregar métodos para que el actor realice tareas.
-    perform(task: any): void {
-        return task.execute(this);
-    }
+  perform(task: any): void {
+    return task.execute(this);
+  }
 
-    attemptsTo(...tasks: any[]): void {
-      tasks.forEach(task => {
-        task.execute(this);
-      });
-    }
+  attemptsTo(...tasks: any[]): void {
+    tasks.forEach(task => task.execute(this)); 
+  }
 
-    asksFor(question: any): any {
-      return question.answeredBy(this);
-    }
-
+  asksFor(question: any): any {
+    return question.answeredBy(this);
+  }
 }
 
 /*
