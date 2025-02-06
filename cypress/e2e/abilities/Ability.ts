@@ -1,3 +1,5 @@
+import Actor from "cypress/support/actors/actor";
+
 export interface Ability {
-    performAs(actor: any): void;
+    performAs(actor: Actor): void;
 }

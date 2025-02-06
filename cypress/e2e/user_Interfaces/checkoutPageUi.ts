@@ -1,25 +1,14 @@
-export const checkoutPageUi = {
-    CONTENEDOR_DELIVERY_ADDRESS: ()=> cy.get('#address_delivery'),
-    CONTENEDOR_BILLING_ADDRESS: ()=> cy.get('#address_invoice'),
-    CONTENEDOR_YOUR_ORDER: ()=> cy.get('#cart_info'),
-    TEXT_AREA_COMENTARIO: ()=> cy.get('.form-control'),
-    BTN_PLACE_ORDER: ()=> cy.get(':nth-child(7) > .btn'),
-    TEXTBOX_NAMECARD: ()=> cy.get('[data-qa="name-on-card"]'),
-    TEXTBOX_CARDNUMBER: ()=> cy.get('[data-qa="card-number"]'),
-    TEXTBOX_CARDCVC: ()=> cy.get('[data-qa="cvc"]'),
-    TEXTBOX_CARDEXP: ()=> cy.get('[data-qa="expiry-month"]'),
-    TEXTBOX_CARDYEAR: ()=> cy.get('[data-qa="expiry-year"]'),
-    BTN_PAY: ()=> cy.get('[data-qa="pay-button"]'),
-    LABEL_SUCCESS: ()=>  cy.get('.col-sm-9 > p')
+export const checkoutPageStringUi = {
+    CONTENEDOR_DELIVERY_ADDRESS: '#address_delivery',
+    CONTENEDOR_BILLING_ADDRESS: '#address_invoice',
+    CONTENEDOR_YOUR_ORDER: '#cart_info',
+    TEXT_AREA_COMENTARIO: '.form-control',
+    BTN_PLACE_ORDER: ':nth-child(7) > .btn',
+    TEXTBOX_NAMECARD: '[data-qa="name-on-card"]',
+    TEXTBOX_CARDNUMBER: '[data-qa="card-number"]',
+    TEXTBOX_CARDCVC: '[data-qa="cvc"]',
+    TEXTBOX_CARDEXP: '[data-qa="expiry-month"]',
+    TEXTBOX_CARDYEAR: '[data-qa="expiry-year"]',
+    BTN_PAY: '[data-qa="pay-button"]',
+    LABEL_SUCCESS: '.col-sm-9 > p'
 }
-
-
-/*
-class CartPage {
-    getBreadcrumb() {
-        return cy.get('.active');
-    }
-}
-
-export const cartPage = new CartPage();
-*/

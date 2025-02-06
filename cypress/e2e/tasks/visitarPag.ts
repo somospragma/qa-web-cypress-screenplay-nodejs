@@ -11,6 +11,6 @@ export default class VisitarPag implements Task {
 
     execute(actor: Actor): void {
         const cypress = UseCypress.as(actor)
-        cy.visit(this.url).wait(1000)
+        cypress.visit(this.url)
     }
 }
