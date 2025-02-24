@@ -1,8 +1,8 @@
 import Actor from 'cypress/support/actors/actor';
-import { Task } from 'cypress/support/tasks/task';
 import { UseCypress } from '../abilities/userCypress';
+import { Interaction } from 'cypress/support/tasks/interaction';
 
-export default class VisitarPag implements Task {
+export default class VisitarPag implements Interaction {
     private readonly url: string;
 
     constructor(url: string) {

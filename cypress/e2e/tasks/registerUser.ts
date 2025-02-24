@@ -2,10 +2,10 @@ import { Task } from "cypress/support/tasks/task";
 import { loginPageStringUi } from "../user_Interfaces/loginPageUi";
 import { GenerateRandomData } from "../abilities/generateRandomData";
 import Actor from "cypress/support/actors/actor";
-import TypeElement from "./typeElement";
-import ClickElement from "./clickElement";
+import TypeElement from "../interactions/typeElement";
+import ClickElement from "../interactions/clickElement";
 import { registerPageStringUi } from "../user_Interfaces/registerPageUi";
-import SelectElement from "./selectElement";
+import SelectElement from "../interactions/selectElement";
 
 export class RegisterUser implements Task {
 

@@ -1,8 +1,8 @@
 import Actor from "cypress/support/actors/actor";
 import { UseCypress } from "../abilities/userCypress";
-import { Task } from "cypress/support/tasks/task";
+import { Interaction } from "cypress/support/tasks/interaction";
 
-export default class SelectElement implements Task{
+export default class SelectElement implements Interaction{
     private readonly selector: string;
     private readonly i: string;
  

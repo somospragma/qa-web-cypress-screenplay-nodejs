@@ -1,7 +1,7 @@
-import { Task } from "cypress/support/tasks/task";
+import { Interaction } from "cypress/support/tasks/interaction";
 import { UseCypress } from "../abilities/userCypress";
 
-export default class ClickElement implements Task {
+export default class ClickElement implements Interaction {
     private readonly selector: string;
  
     constructor(selector: string) {

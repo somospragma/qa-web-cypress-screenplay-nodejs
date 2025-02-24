@@ -7,9 +7,9 @@ import { UseCypress } from "../abilities/userCypress";
 import { GenerateRandomData } from "../abilities/generateRandomData";
 import { RegisterUser } from "../tasks/registerUser";
 import Actor from "cypress/support/actors/actor";
-import VisitarPag from "../tasks/visitarPag";
-import ClickElement from "../tasks/clickElement";
-import TypeElement from "../tasks/typeElement";
+import VisitarPag from "../interactions/visitarPag";
+import ClickElement from "../interactions/clickElement";
+import TypeElement from "../interactions/typeElement";
 import Verify from "../questions/verify";
 import InvokeText from "../questions/invokeText";
 
