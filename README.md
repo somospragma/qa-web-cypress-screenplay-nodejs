@@ -1,43 +1,141 @@
+
 <h1 align="center">
   <br>
-  <a><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png" width="30%"></a>
+  <a><div style="background-color: white; border-radius: 15px; padding: 10px; display: inline-block; width: 40%"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png" width="90%">
+  </div>
+  </a>
+  <br>
+  Arquetipo Cypress - Cucumber - Screenplay
+  <br>
 </h1>
+
 
 <h4 align="center">Proyecto base de <a href="" target="_blank">Pragma</a>.</h4>
 
-# Arquetipo Cypress - Cucumber - Screenplay
+<p align="center">
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-5.0-blue.svg" alt="TypeScript 5.0">
+  </a>
+  <a href="https://www.cypress.io/">
+    <img src="https://img.shields.io/badge/Cypress-12.0-green.svg" alt="Cypress 12.0">
+  </a>
+  <a href="https://esbuild.github.io/">
+    <img src="https://img.shields.io/badge/Esbuild-0.18-orange.svg" alt="Esbuild 0.18">
+  </a>
+  <a href="https://github.com/bahmutov/cypress-esbuild-preprocessor">
+    <img src="https://img.shields.io/badge/@bahmutov/cypress--esbuild--preprocessor-2.0-yellow.svg" alt="@bahmutov/cypress-esbuild-preprocessor 2.0">
+  </a>
+  <a href="https://github.com/cucumber/gherkin">
+    <img src="https://img.shields.io/badge/@cucumber/gherkin-26.0-lightgrey.svg" alt="@cucumber/gherkin 26.0">
+  </a>
+  <a href="https://github.com/rbuckton/reflect-metadata">
+    <img src="https://img.shields.io/badge/Reflect_Metadata-0.1-purple.svg" alt="Reflect Metadata 0.1">
+  </a>
+  <a href="https://github.com/cucumber/cucumber-js">
+    <img src="https://img.shields.io/badge/Ext_Cucumber-10.0-brightgreen.svg" alt="Ext: Cucumber 10.0">
+  </a>
+  <a href="https://github.com/adamgruber/mochawesome">
+    <img src="https://img.shields.io/badge/Reporters_Mochawesome-7.0-red.svg" alt="Reporters-Mochawesome 7.0">
+  </a>
+  <a href="https://fakerjs.dev/">
+    <img src="https://img.shields.io/badge/Faker-8.0-blueviolet.svg" alt="Faker 8.0">
+  </a>
+</p>
 
-Este arquetipo proporciona una base para proyectos de automatización de pruebas que integran Cypress con Cucumber. Está diseñado para facilitar la escritura de pruebas en un formato legible para humanos utilizando Gherkin, aprovechando la robustez de Cypress para la ejecución en navegadores.
+## Indice
+  • [Descripción](#descripcion)
+  
+  • [Estructura del proyecto](#estructura-del-proyecto)
 
-Este arquetipo es ideal para equipos que buscan implementar pruebas automatizadas basadas en BDD (Behavior Driven Development), manteniendo la simplicidad y rapidez de Cypress junto con la legibilidad de Gherkin.
+  • [Instalación y ejecución](#instalación-y-ejecución)
 
-# Indice
-  <p>• <a href="#instalación-y-ejecución">Instalación y ejecución</a></p>
-  <p>• <a href="#descarga">Descarga</a></p>
-  <p>• <a href="#consideraciones">Consideraciones</a></p>
-  <p>• <a href="#tecnologias">Tecnologias</a></p>
-  <p>• <a href="#autor">Autor</a></p>
+  • [Tecnologias](#tecnologias)
+  
+  • [Autor](#autor)
+
+  • [Licencia](#licencia)
+
+## Descripción
+Este proyecto es un arquetipo de automatización de pruebas que combina la potencia de Cypress, la claridad de Cucumber y la estructura limpia y mantenible de Screenplay. Está diseñado para facilitar la creación, ejecución y mantenimiento de pruebas automatizadas de alta calidad en aplicaciones web para desktop o responsive.
+
+## Estructura del proyecto
+<pre>
+PROYECTOBASECYPRESS/
+ ├──cypress/
+ |  ├── e2e/                           
+ |  │   ├── abilities/        # Habilidades del actor (por ejemplo, UseCypress)
+ |  |   ├── features/         # Archivos de características (features) de Cucumber
+ |  │   ├── interactions/     # Interacciones específicas (por ejemplo, Click, Enter)
+ |  │   ├── questions/        # Preguntas que el actor puede realizar
+ |  │   ├── step_definitions/ # Definiciones de pasos de Cucumber
+ |  │   ├── tasks/            # Tareas que el actor puede realizar
+ |  │   └──user_Interfaces/   # Localizadores de la interfaz de usuario
+ |  │
+ |  └── support/
+ |      ├── actors/  # Implementación flexible y modular para asignar habilidades y metodos al actor
+ |      └── tasks/   # Interfaces de Interaction (ability, interaction, question, task)
+ |
+ └──  reports/       # Ubicación del reporte
+
+</pre>
 
 ## Instalación y ejecución
-Para clonar y ejecutar está aplicación, necesitas [Git](https://git-scm.com),  [NodeJS](https://nodejs.org/en/download/) y [Cypress](https://www.cypress.io/) instalados en tu equipo. 
-<br>Desde la linea de comando:</br>
+Sigue estos pasos para clonar, configurar y ejecutar el proyecto en tu equipo local.
+
+### Requisitos previos
+- Asegúrate de tener instaladas las siguientes herramientas:
+
+  [Git](https://git-scm.com): Para clonar el repositorio.
+
+  [Node.js®](https://nodejs.org/en/download/): Para gestionar las dependencias y ejecutar el proyecto.
+
+  [Cypress](https://www.cypress.io/): Para ejecutar las pruebas automatizadas.
+
+### Pasos para la instalación
+1. Clonar el repositorio:
+
+   Abre tu terminal o línea de comandos y ejecuta el siguiente comando para clonar el proyecto:
+
 ```bash
-# Clonar proyecto y configuración inicial
-$ git clone 
-$ cd qa-web-cypress-cucumber-screenplay-simple
-$ npm i
+git clone https://github.com/somospragma/qa-web-cypress-screenplay-automatizacion-nodejs.git
 ```
 
-## Descarga
-Puedes descargar el proyecto en el enlace [download](https://github.com/somospragma/qa-backend-cypress-nodejs/archive/refs/heads/master.zip) 
+2. Navegar al directorio del proyecto:
 
-## Consideraciones
-- Copiar/Pegar en la carpeta raiz el archivo: .cypress-cucumber-preprocessorrc.json
-- Configurar el archivo cypress.config.js
-- Crear la carpeta features (nombre definido en config.js)
-  -  Crear el escenario de prueba. Ejemplo: prueba.feature
-- Crear la carpeta step_definitions (nombre definido en .cypress-cucumber-preprocessorrc.json)
-  - Crear el archivo javascritp. Ejemplo: prueba_step.js
+   Accede al directorio del proyecto clonado:
+```bash
+cd qa-web-cypress-screenplay-automatizacion-nodejs
+```
+
+3. Instalar dependencias:
+
+   En dicha carpeta, abre el terminal o línea de comandos y ejecuta el instalador de dependencias utilizando npm:
+```bash
+npm install
+```
+
+4. Descargar el proyecto (opcional):
+
+   Si prefieres no usar Git, puedes descargar el proyecto directamente desde el enlace de descarga:
+[Descargar proyecto](https://github.com/somospragma/qa-web-cypress-screenplay-automatizacion-nodejs/archive/refs/heads/main.zip) 
+
+### Ejecución del proyecto
+Una vez completada la instalación, puedes ejecutar las pruebas de la siguiente manera:
+
+- Ejecutar pruebas en modo interactivo:
+
+Abre Cypress en modo interactivo para ver y ejecutar las pruebas en el navegador:
+
+```bash
+npx cypress open
+```
+- Ejecutar pruebas en modo headless:
+
+Si prefieres ejecutar las pruebas en segundo plano (sin interfaz gráfica), usa el siguiente comando:
+
+```bash
+npx cypress run
+```
 
 ## Tecnologias
 - [TypeScript](https://docs.cypress.io/guides/tooling/typescript-support)
@@ -47,10 +145,13 @@ Puedes descargar el proyecto en el enlace [download](https://github.com/somospra
   - <a>@cucumber/gherkin
   - Reflect Metadata</a>
 - [Ext: Cucumber](https://marketplace.visualstudio.com/items?itemName=CucumberOpen.cucumber-official)
-- [Reporters-Mochawesome](https://docs.cypress.io/guides/tooling/reporters)
+- [Reporters-Mochawesome](https://www.npmjs.com/package/cypress-mochawesome-reporter)
 - [Faker](https://www.npmjs.com/package/@faker-js/faker)
 
 ## Autor
-- Ing. Abraham D. Morales R.
 
+- [Ing. Abraham D. Morales R.](https://github.com/danielro816)
 
+## Licencia
+
+Open source project.

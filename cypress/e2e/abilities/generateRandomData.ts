@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
-import { Ability } from './Ability';
+import { Ability } from '../../support/tasks/';
+
 
 // Habilidad para generar datos aleatorios
 export class GenerateRandomData implements Ability {

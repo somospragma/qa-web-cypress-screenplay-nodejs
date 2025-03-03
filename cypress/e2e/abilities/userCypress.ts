@@ -1,5 +1,5 @@
 import Actor from "cypress/support/actors/actor";
-import { Ability } from "./Ability";
+import { Ability } from "../../support/tasks/";
 
 export class UseCypress implements Ability {
 
