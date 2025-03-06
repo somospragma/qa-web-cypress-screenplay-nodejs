@@ -18,4 +18,3 @@ export default class Verify implements Question {
         cypress.should(this.selector, this.assertion, this.value);
     }
 }
-

@@ -1,6 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Ability } from '../../support/tasks/';
-
+import { Ability } from 'cypress/support/tasks/ability';
 
 // Habilidad para generar datos aleatorios
 export class GenerateRandomData implements Ability {

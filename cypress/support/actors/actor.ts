@@ -1,4 +1,5 @@
-import { Ability } from "cypress/support/tasks/";
+import { Ability } from "../tasks/ability";
+
 
 export default class Actor {
   private readonly name: string;
