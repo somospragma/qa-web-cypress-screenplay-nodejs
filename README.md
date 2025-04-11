@@ -68,7 +68,7 @@ PROYECTOBASECYPRESS/
  |  │   ├── questions/        # Preguntas que el actor puede realizar
  |  │   ├── step_definitions/ # Definiciones de pasos de Cucumber
  |  │   ├── tasks/            # Tareas que el actor puede realizar
- |  │   └──user_Interfaces/   # Localizadores de la interfaz de usuario
+ |  │   └── user_Interfaces/  # Localizadores de la interfaz de usuario
  |  │
  |  └── support/
  |      ├── actors/  # Implementación flexible y modular para asignar habilidades y metodos al actor
