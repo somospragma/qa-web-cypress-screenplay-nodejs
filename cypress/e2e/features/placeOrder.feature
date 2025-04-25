@@ -2,7 +2,7 @@ Feature: Place Order: Register while Checkout
 
   Scenario: Register while Checkout <width> <height>
     Given Launch browser <width> <height>
-    When Navigate to url 'http://automationexercise.com'
+    When Navigate to url
     Then Verify that home page is visible successfully
     When Add products to cart
     When Click Cart button
@@ -21,8 +21,8 @@ Feature: Place Order: Register while Checkout
     Then Verify success message 'Congratulations! Your order has been confirmed!'
     When Click Delete Account button
     Then Verify Account Delete! 'Account Deleted!' and click Continue button
-  Examples:
-    | width | height |
-    |  390  |  844   |
-    | 1024  |  768   |
-  
+
+    Examples:
+      | width | height |
+      |   390 |    844 |
+      |  1024 |    768 |

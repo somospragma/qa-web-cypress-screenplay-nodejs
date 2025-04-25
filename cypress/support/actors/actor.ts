@@ -2,12 +2,9 @@ import { Ability } from "../tasks/ability";
 
 
 export default class Actor {
-  private readonly name: string;
   private readonly abilities: Map<string, any> = new Map();
 
-  constructor(name: string) {
-    this.name = name;
-  }
+  constructor(private readonly name: string) { }
 
   can(ability: Ability): void {
     const abilityName = ability.constructor.name;

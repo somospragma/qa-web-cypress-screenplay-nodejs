@@ -61,7 +61,7 @@ Este proyecto es un arquetipo de automatización de pruebas que combina la poten
 ## Estructura del proyecto
 <pre>
 PROYECTOBASECYPRESS/
- ├──cypress/
+ ├── cypress/
  |  ├── e2e/                           
  |  │   ├── abilities/        # Habilidades del actor (por ejemplo, UseCypress)
  |  |   ├── features/         # Archivos de características (features) de Cucumber
@@ -69,13 +69,13 @@ PROYECTOBASECYPRESS/
  |  │   ├── questions/        # Preguntas que el actor puede realizar
  |  │   ├── step_definitions/ # Definiciones de pasos de Cucumber
  |  │   ├── tasks/            # Tareas que el actor puede realizar
- |  │   └──user_Interfaces/   # Localizadores de la interfaz de usuario
+ |  │   └── user_Interfaces/   # Localizadores de la interfaz de usuario
  |  │
  |  └── support/
- |      ├── actors/  # Implementación flexible y modular para asignar habilidades y metodos al actor
- |      └── tasks/   # Interfaces de Interaction (ability, interaction, question, task)
+ |      ├── actors/ # Implementación flexible y modular para asignar habilidades y metodos al actor
+ |      └── tasks/  # Interfaces de Interaction (ability, interaction, question, task)
  |
- └──  reports/       # Ubicación del reporte
+ └── reports/       # Ubicación del reporte
 
 </pre>
 
@@ -111,7 +111,7 @@ cd qa-web-cypress-screenplay-automatizacion-nodejs
 
    En dicha carpeta, abre el terminal o línea de comandos y ejecuta el instalador de dependencias utilizando npm:
 ```bash
-npm install
+npm install cypress --save-dev
 ```
 
 4. Descargar el proyecto (opcional):

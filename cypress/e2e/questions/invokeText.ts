@@ -3,15 +3,7 @@ import { Question } from "cypress/support/tasks/question";
 import { UseCypress } from "../abilities/userCypress";
 
 export default class InvokeText implements Question {
-    private readonly selector: string;
-    private readonly assertion: string;
-    private readonly value: any;
-
-    constructor(selector: string, assertion: string, value: any) {
-        this.selector = selector;
-        this.assertion = assertion;
-        this.value = value;
-    }
+    constructor(private readonly selector: string, private readonly assertion: string, private readonly value: any) { }
 
     answeredBy(actor: Actor): void {
         const cypress = UseCypress.as(actor);

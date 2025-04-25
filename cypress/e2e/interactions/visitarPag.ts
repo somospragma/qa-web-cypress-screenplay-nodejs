@@ -1,16 +1,17 @@
 import Actor from 'cypress/support/actors/actor';
 import { UseCypress } from '../abilities/userCypress';
 import { Interaction } from 'cypress/support/tasks/interaction';
+import { UseEnvironment } from '../abilities/useEnvironment';
 
 export default class VisitarPag implements Interaction {
-    private readonly url: string;
-
-    constructor(url: string) {
-        this.url = url;
+    execute(actor: Actor): void {
+        const baseUrl = this.selectEnv(actor);
+        const cypress = UseCypress.as(actor)
+        cypress.visit(baseUrl)
     }
 
-    execute(actor: Actor): void {
-        const cypress = UseCypress.as(actor)
-        cypress.visit(this.url)
+    private selectEnv(actor: Actor): string {
+        const env = UseEnvironment.as(actor).baseUrl();
+        return env;
     }
 }
