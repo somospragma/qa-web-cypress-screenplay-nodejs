@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <a><div style="background-color: white; border-radius: 15px; padding: 10px; display: inline-block; width: 40%"><img src="https://f.hubspotusercontent20.net/hubfs/2829524/Copia%20de%20LOGOTIPO_original-2.png" width="90%">
@@ -70,6 +69,7 @@ PROYECTOBASECYPRESS/
  |  │   ├── step_definitions/ # Definiciones de pasos de Cucumber
  |  │   ├── tasks/            # Tareas que el actor puede realizar
  |  │   └── user_Interfaces/   # Localizadores de la interfaz de usuario
+ |  │   └── user_Interfaces/  # Localizadores de la interfaz de usuario
  |  │
  |  └── support/
  |      ├── actors/ # Implementación flexible y modular para asignar habilidades y metodos al actor
