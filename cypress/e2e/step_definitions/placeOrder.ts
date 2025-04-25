@@ -4,6 +4,7 @@ import { cartPageUi } from "../user_Interfaces/cartPageUi";
 import { registerPageStringUi } from "../user_Interfaces/registerPageUi";
 import { checkoutPageStringUi } from "../user_Interfaces/checkoutPageUi";
 import { UseCypress } from "../abilities/userCypress";
+import { UseEnvironment } from "../abilities/useEnvironment";
 import { GenerateRandomData } from "../abilities/generateRandomData";
 import { RegisterUser } from "../tasks/registerUser";
 import Actor from "cypress/support/actors/actor";
@@ -16,14 +17,15 @@ import InvokeText from "../questions/invokeText";
 const actorQA = new Actor('Usuario de prueba');
 
 actorQA.can(new UseCypress());
+actorQA.can(new UseEnvironment());
 actorQA.can(new GenerateRandomData());
 
 Given("Launch browser {int} {int}", (width: number, height: number) => {
     cy.viewport(width, height);
  });
 
-When("Navigate to url {string}", (url: string) => {
-    const visitPag = new VisitarPag(url);
+When("Navigate to url", () => {
+    const visitPag = new VisitarPag();
     visitPag.execute(actorQA);
 });
 

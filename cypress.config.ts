@@ -30,11 +30,19 @@ export default defineConfig({
   },
   e2e:
   {
-    //baseUrl: 'https://demoqa.com/',
     setupNodeEvents,
     specPattern: "cypress/e2e/features/**.feature",
     chromeWebSecurity: false
   },
   env:{
+    DEV: {
+      baseUrl: 'http://automationexercise.com',
+    },
+    STG: {
+      baseUrl: '',
+    },
+    PDN: {
+      baseUrl: '',
+    }
   }
 });
