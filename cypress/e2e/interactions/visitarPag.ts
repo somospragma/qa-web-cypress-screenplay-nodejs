@@ -13,5 +13,15 @@ export default class VisitarPag implements Interaction {
     private selectEnv(actor: Actor): string {
         const env = UseEnvironment.as(actor).baseUrl();
         return env;
+
+    execute(actor: Actor): void {
+        const url = this.selectEnv(actor);
+        const cypress = UseCypress.as(actor)
+        cypress.visit(url);
+    }
+
+    private selectEnv (actor: Actor): string {
+        const baseUrl = UseEnvironment.as(actor).baseUrl();
+        return baseUrl;
     }
 }
