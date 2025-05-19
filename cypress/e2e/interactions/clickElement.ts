@@ -1,5 +1,5 @@
 import { Interaction } from "cypress/support/tasks/interaction";
-import { UseCypress } from "../abilities/userCypress";
+import { UseCypress } from "../abilities/useCypress";
 
 export default class ClickElement implements Interaction {
     constructor(private readonly selector: string) { }

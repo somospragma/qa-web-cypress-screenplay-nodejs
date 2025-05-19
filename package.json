@@ -6,12 +6,12 @@
   "scripts": {
     "test": "cypress open --e2e ENV=DEV",
     "testRun": "cypress run --e2e --browser edge cypress/e2e/features/**.feature",
-    "testRep": "cypress run --e2e --browser edge"
+    "testRep": "cypress run --e2e --browser edge ENV=DEV"
   },
   "author": "ab",
   "license": "ISC",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
     "@faker-js/faker": "^9.2.0",
     "cypress": "^14.3.2",

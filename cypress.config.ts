@@ -13,7 +13,7 @@ async function setupNodeEvents(on, config) {
   await addCucumberPreprocessorPlugin(on, config);
 
   require('cypress-mochawesome-reporter/plugin')(on);
-  Object.keys(process.env).forEach((key) =>{
+  Object.keys(process.env).forEach((key) => {
     config.env[key] = process.env[key];
   });
 
@@ -25,8 +25,9 @@ export default defineConfig({
   reporterOptions: {
     reportDir: `reports/report_${fecha.getDate()}_${fecha.getMonth() + 1}_${fecha.getFullYear()}`,
     reportPageTitle: 'Reporte de pruebas Ecosistema Digital/Transer',
-    inlineAssets: true,
     charts: true,
+    embeddedScreenshots: true,
+    inlineAssets: true
   },
   e2e:
   {
@@ -34,7 +35,7 @@ export default defineConfig({
     specPattern: "cypress/e2e/features/**.feature",
     chromeWebSecurity: false
   },
-  env:{
+  env: {
     DEV: {
       baseUrl: 'http://automationexercise.com',
     },

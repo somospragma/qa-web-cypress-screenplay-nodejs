@@ -9,6 +9,6 @@ export const checkoutPageStringUi = {
     TEXTBOX_CARDCVC: '[data-qa="cvc"]',
     TEXTBOX_CARDEXP: '[data-qa="expiry-month"]',
     TEXTBOX_CARDYEAR: '[data-qa="expiry-year"]',
-    BTN_PAY: '[data-qa="pay-button"]',
+    BTN_PAY_AND_CONFIRM_ORDER: '[data-qa="pay-button"]',
     LABEL_SUCCESS: '.col-sm-9 > p'
 }

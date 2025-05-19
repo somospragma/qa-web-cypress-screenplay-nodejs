@@ -1,5 +1,5 @@
 import Actor from "cypress/support/actors/actor";
-import { UseCypress } from "../abilities/userCypress";
+import { UseCypress } from "../abilities/useCypress";
 import { Interaction } from "cypress/support/tasks/interaction";
 
 export default class TypeElement implements Interaction {
