@@ -1,11 +1,11 @@
 import { Task } from "cypress/support/tasks/task";
 import Actor from "cypress/support/actors/actor";
 import { headerStringUi } from "../user_Interfaces/headerUi";
-import ClickElement from "../interactions/clickElement";
 import { cartPageStringUi } from "../user_Interfaces/cartPageUi";
 import { checkoutPageStringUi } from "../user_Interfaces/checkoutPageUi";
+import Click from "../interactions/clickElement";
 
-export class ClicElementButton implements Task {
+export class ClicElement implements Task {
 
     constructor(private readonly buttonName: string) { }
 
@@ -20,11 +20,10 @@ export class ClicElementButton implements Task {
         };
 
         const selector = buttonMap[this.buttonName];
+        actor.perform(Click.Element(selector));
+    }
 
-        if (!selector) {
-            throw new Error(`Button "${this.buttonName}" is not defined in buttonMap.`);
-        }
-
-        actor.perform(new ClickElement(selector));
+    static button(buttonName: string): ClicElement {
+        return new ClicElement(buttonName);
     }
 }

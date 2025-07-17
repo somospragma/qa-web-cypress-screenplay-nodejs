@@ -15,4 +15,7 @@ export default class VisitarPag implements Interaction {
         const baseUrl = UseEnvironment.as(actor).baseUrl();
         return baseUrl;
     }
+    static page(): VisitarPag {
+        return new VisitarPag();
+    }
 }

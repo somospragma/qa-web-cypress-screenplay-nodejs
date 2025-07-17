@@ -15,4 +15,7 @@ export class RegisterPayment implements Task {
             nameCard,cardNumber,cardCvc,cardExp,cardYear
         )
     }
+    static registerPayment(): RegisterPayment {
+        return new RegisterPayment();
+    }
 }

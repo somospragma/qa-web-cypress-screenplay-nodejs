@@ -8,14 +8,14 @@ import { GenerateRandomData } from "../abilities/generateRandomData";
 import { RegisterUser } from "../tasks/registerUser";
 import Actor from "cypress/support/actors/actor";
 import VisitarPag from "../interactions/visitarPag";
-import ClickElement from "../interactions/clickElement";
 import TypeElement from "../interactions/typeElement";
 import Verify from "../questions/verify";
 import InvokeText from "../questions/invokeText";
 import { RegisterPayment } from "../tasks/registerPayment";
 import { headerStringUi } from "../user_Interfaces/headerUi";
-import { ClicElementButton } from "../tasks/clicElementButton";
 import { cartPageStringUi } from "../user_Interfaces/cartPageUi";
+import Click from "../interactions/clickElement";
+import { ClicElement } from "../tasks/clicElementButton";
 
 const actorQA = new Actor('Usuario de prueba');
 
@@ -28,73 +28,65 @@ Given("Launch browser {int} {int}", (width: number, height: number) => {
  });
 
 When("Navigate to url", () => {
-    const visitPag = new VisitarPag();
-    visitPag.execute(actorQA);
+    actorQA.perform(VisitarPag.page());
 });
 
 Then("Verify that home page is visible successfully", () => {
-    const isVisible = new Verify(headerStringUi.LOGO, 'be.visible');
-    isVisible.answeredBy(actorQA);
+    actorQA.asksFor(Verify.element(headerStringUi.LOGO, 'be.visible'))
  });
 
 When("Add products to cart", () => {
     actorQA.attemptsTo(
-        new ClickElement(homePageStringUi.ADD_CART_PROD1),
-        new ClickElement(homePageStringUi.PRODUCT_ADDED)
+        Click.Element(homePageStringUi.ADD_CART_PROD1),
+        Click.Element(homePageStringUi.PRODUCT_ADDED)
     );
  });
 
 When("Click {string} button", (buttonName: string) => {
-    actorQA.perform(new ClicElementButton(buttonName));
+    actorQA.perform(ClicElement.button(buttonName));
 });
 
 Then("Verify that cart page is displayed", () => {
-    const isVisible = new Verify(cartPageStringUi.BREAKCRUM, 'be.visible');
-    isVisible.answeredBy(actorQA);
+    actorQA.asksFor(Verify.element(cartPageStringUi.BREAKCRUM, 'be.visible'))
 });
 
 When("Fill all details in Signup and create account", () => {
-    actorQA.perform(new RegisterUser);
+    actorQA.perform(RegisterUser.registerUser());
 });
 
 Then("Verify Account Created! {string} and click Continue button", (label: string) => {
-    const invoke = new InvokeText(registerPageStringUi.LABEL_ACCOUNT_CREATED, 'text', label);
-    invoke.answeredBy(actorQA);
-    actorQA.perform(new ClickElement(registerPageStringUi.BTN_CONTINUE));
+    actorQA.asksFor(InvokeText.element(registerPageStringUi.LABEL_ACCOUNT_CREATED, 'text', label))
+    actorQA.perform(Click.Element(registerPageStringUi.BTN_CONTINUE));
 });
 
 Then("Verify Logged in as username at top", () => {
-    const isVisible = new Verify(headerStringUi.LOGGED_USERNAME, 'be.visible');
-    isVisible.answeredBy(actorQA);
+    actorQA.asksFor(Verify.element(headerStringUi.LOGGED_USERNAME, 'be.visible'))
 });
 
 When("Verify Address Details and Review Your Order", () => {
-    const isVisible1 = new Verify(checkoutPageStringUi.CONTENEDOR_DELIVERY_ADDRESS, 'be.visible');
-    isVisible1.answeredBy(actorQA);
-    const isVisible2 = new Verify(checkoutPageStringUi.CONTENEDOR_BILLING_ADDRESS, 'be.visible');
-    isVisible2.answeredBy(actorQA);
-    const isVisible3 = new Verify(checkoutPageStringUi.CONTENEDOR_YOUR_ORDER, 'be.visible');
-    isVisible3.answeredBy(actorQA);
+    actorQA.toSee(
+        Verify.element(checkoutPageStringUi.CONTENEDOR_DELIVERY_ADDRESS, 'be.visible'),
+        Verify.element(checkoutPageStringUi.CONTENEDOR_BILLING_ADDRESS, 'be.visible'),
+        Verify.element(checkoutPageStringUi.CONTENEDOR_YOUR_ORDER, 'be.visible')
+    );
 });
 
 When("Enter description in comment text area and click Place Order", () => {
     actorQA.attemptsTo(
-        new TypeElement(checkoutPageStringUi.TEXT_AREA_COMENTARIO,'Comentario de prueba'),
-        new ClickElement(checkoutPageStringUi.BTN_PLACE_ORDER)
+        TypeElement.into(checkoutPageStringUi.TEXT_AREA_COMENTARIO,'Comentario de prueba'),
+        Click.Element(checkoutPageStringUi.BTN_PLACE_ORDER)
     );
 });
 
 When("Enter payment details: Name on Card, Card Number, CVC, Expiration date", () => {
-    actorQA.perform(new RegisterPayment);
+    actorQA.perform(RegisterPayment.registerPayment());
 });
 
 Then("Verify success message {string}", (label: string) => {
-    const invoke = new InvokeText(checkoutPageStringUi.LABEL_SUCCESS, 'text', label);
-    invoke.answeredBy(actorQA);
+    actorQA.asksFor(Verify.element(checkoutPageStringUi.LABEL_SUCCESS, 'be.visible', label));
 });
 
 Then("Verify Account Delete! {string} and click Continue button", (label: string) => {
-    const invoke = new InvokeText(homePageStringUi.LABEL_ACCOUNT_DELETED, 'text', label);
-    invoke.answeredBy(actorQA);
-    actorQA.perform(new ClickElement(homePageStringUi.BTN_CONTINUE));
+    actorQA.asksFor(Verify.element(homePageStringUi.LABEL_ACCOUNT_DELETED, 'be.visible', label));
+    actorQA.perform(Click.Element(homePageStringUi.BTN_CONTINUE));
 });

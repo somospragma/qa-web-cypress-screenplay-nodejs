@@ -11,7 +11,7 @@ export default class Actor {
     this.abilities.set(abilityName, ability);
   }
 
-  usesAbility<T>(abilityClass: new(...args: any[]) => T): T {
+  usesAbility<T>(abilityClass: new (...args: any[]) => T): T {
     const abilityName = abilityClass.name;
     const ability = this.abilities.get(abilityName);
     if (!ability) {
@@ -25,15 +25,19 @@ export default class Actor {
   }
 
   attemptsTo(...tasks: any[]): void {
-    tasks.forEach(task => task.execute(this)); 
+    tasks.forEach(task => task.execute(this));
   }
 
   asksFor(question: any): any {
     return question.answeredBy(this);
   }
+
+  toSee(...checks: any[]): void {
+    checks.forEach(check => check.answeredBy(this));
+  }
 }
 
-/*
+/* /*
 1. remember() y recall()
 Estos métodos permiten que el actor "recuerde" información durante el flujo de pruebas, 
 algo similar a lo que en otros patrones se conoce como almacenar y recuperar valores. 

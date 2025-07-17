@@ -33,4 +33,7 @@ export class RegisterUser implements Task {
             typeNameTask,typeEmailTask,clickBtnSign,clickRadio,typePass,selectDay,selectMonth,selectYear,typeFirtName,typeLastName,TypeCompany,TypeAddres,selectCountry,typeState,typeCity,typeZip,typeMobile,clickBtnCreate
         )
     }
+    static registerUser(): RegisterUser {
+        return new RegisterUser();
+    }
 }

@@ -9,4 +9,7 @@ export default class TypeElement implements Interaction {
         const cypress = UseCypress.as(actor);
         cypress.type(this.selector, this.argument);
     }
+    static into(selector: string, argument: string): TypeElement {
+        return new TypeElement(selector, argument);
+    }
 }

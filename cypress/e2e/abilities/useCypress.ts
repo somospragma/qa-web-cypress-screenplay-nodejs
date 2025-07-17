@@ -10,21 +10,27 @@ export class UseCypress implements Ability {
     performAs(actor: Actor): void {
         // Puede ser útil si necesitas configurar algo específico en Cypress
     }
-   
+
     visit(url: string): void {
-        cy.visit(url);
+        cy.visit(url, { timeout: 10000 });
     }
 
     click(selector: string): void {
-        cy.get(selector).click();
+        cy.get(selector, {timeout: 2000})
+            .should('be.visible')
+            .click();
     }
 
     type(selector: string, text: string): void {
-        cy.get(selector).type(text);
+        cy.get(selector, {timeout: 2000})
+            .should('be.visible')
+            .type(text, {delay:100});
     }
 
     select(selector: string, i: string): void {
-        cy.get(selector).select(i);
+        cy.get(selector, {timeout: 2000})
+            .should('be.visible')
+            .select(i);
     }
 
     wait(milliseconds: number): void {
@@ -32,12 +38,12 @@ export class UseCypress implements Ability {
     }
 
     should(selector: string, assertion: string, value?: any): void {
-        cy.get(selector).should(assertion, value);
+        cy.get(selector, {timeout: 2000} ).should(assertion, value);
     }
 
     invoke(selector: string, assertion: string, value: any): void {
-        cy.get(selector).invoke(assertion).then((texto)=>{
-            const title = texto.replace(/\n/g,'').trim();
+        cy.get(selector, {timeout: 2000} ).invoke(assertion).then((texto) => {
+            const title = texto.replace(/\n/g, '').trim();
             expect(title).to.be.equals(value);
         });
     }

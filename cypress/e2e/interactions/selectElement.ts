@@ -9,4 +9,7 @@ export default class SelectElement implements Interaction{
         const cypress = UseCypress.as(actor);
         cypress.select(this.selector, this.i);
     }
+    static option(selector: string, i: string): SelectElement {
+        return new SelectElement(selector, i);
+    }
 }

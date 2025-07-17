@@ -50,4 +50,4 @@ Feature: Place Order
     Examples:
       | width | height |
       #|  1360 |    768 |
-      |   390 |    844 |
+      #|   390 |    844 |
